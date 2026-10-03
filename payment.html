@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upgrade to Premium | Techify Atelier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="payment.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</head>
+<body class="pay-body">
+<main class="pay-layout">
+  <section class="pay-left">
+    <a class="back" href="index.html">← Back to store</a>
+    <h1>Unlock every finish.</h1>
+    <p class="lead">One payment of Rs 500. Yours for good.</p>
+    <ul class="feature-list light">
+      <li>Gold, Rose Gold and Aurora finishes</li><li>Gold-foil engraving</li><li>Shimmer effect on every preview</li>
+    </ul>
+    <div class="card-scene"><div class="flip" id="flip">
+      <div class="face vcard front">
+        <svg class="chip" viewBox="0 0 40 30" width="46" height="35"><rect width="40" height="30" rx="6" fill="#e5c76b"/><path d="M0 10h40M0 20h40M14 0v30M26 0v30" stroke="#a8862a" fill="none"/></svg>
+        <svg class="nfc" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M8 6c3 3.5 3 8.500 0 12M12 4c4.500 5 4.500 11 0 16M16 2c6 6.500 6 13.500 0 20"/></svg>
+        <svg class="visa-logo" viewBox="0 0 100 32" width="84" aria-label="Visa"><text x="2" y="27" font-size="32" font-weight="800" font-style="italic" fill="#fff" font-family="Arial Black,Arial,sans-serif" letter-spacing="1">VISA</text></svg>
+        <div class="card-num" id="cc-number">•••• •••• •••• ••••</div>
+        <div class="card-bottom"><div><small>Cardholder</small><span id="cc-name">YOUR NAME</span></div><div><small>Expires</small><span id="cc-exp">MM/YY</span></div></div>
+      </div>
+      <div class="face vcard back"><div class="stripe"></div><div class="sig"><span>CVV</span><b id="cc-cvv">•••</b></div></div>
+    </div></div>
+  </section>
+
+  <section class="pay-right">
+    <h2>Payment details</h2>
+    <div class="order-row"><span>Techify Premium (lifetime)</span><b>Rs 500</b></div>
+    <form id="payment-form" novalidate>
+      <div class="form-control"><label for="card-name">Cardholder name</label><input type="text" id="card-name" placeholder="Name on card" autocomplete="off"><small class="error-msg">Enter the name on your card.</small></div>
+      <div class="form-control"><label for="card-number">Card number</label><input type="text" id="card-number" inputmode="numeric" placeholder="4242 4242 4242 4242" maxlength="19" autocomplete="off"><small class="error-msg">Enter a valid 16-digit card number.</small></div>
+      <div class="form-group-row">
+        <div class="form-control"><label for="card-expiry">Expiry</label><input type="text" id="card-expiry" inputmode="numeric" placeholder="MM/YY" maxlength="5" autocomplete="off"><small class="error-msg">Use a future MM/YY date.</small></div>
+        <div class="form-control"><label for="card-cvv">CVV</label><input type="password" id="card-cvv" inputmode="numeric" placeholder="123" maxlength="3" autocomplete="off"><small class="error-msg">Enter 3 digits.</small></div>
+      </div>
+      <p class="demo-note">Demo only. Use test number 4242 4242 4242 4242. Never enter real card details.</p>
+      <button type="submit" class="btn-gold wide" id="btn-pay">Pay Rs 500</button>
+      <button type="button" class="btn-secondary wide" id="btn-form-reset">Clear form</button>
+      <div id="payment-processing" class="processing-msg hidden"><span class="spinner"></span> Processing payment…</div>
+      <div id="payment-success" class="hidden"><div id="lottie-success" class="lottie-container"></div><p class="success-text">Payment successful. Premium unlocked!</p><a class="btn-primary wide back-store" href="index.html">Return to store</a></div>
+    </form>
+  </section>
+</main>
+<script src="payment.js"></script>
+</body>
+</html>
