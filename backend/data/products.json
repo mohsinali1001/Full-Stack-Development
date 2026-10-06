@@ -1,0 +1,199 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Aurora Pro Headphones",
+      "type": "headphones",
+      "price": 24999,
+      "currency": "PKR",
+      "description": "Active noise cancelling, 40-hour battery and studio-tuned drivers for all-day listening.",
+      "images": [
+        "images/aurora-1.jpg",
+        "images/aurora-2.jpg",
+        "images/aurora-3.jpg"
+      ],
+      "remoteImages": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSofF4mxwbKQSXbLpSMnTgB1hTJkBpNB1awDTVY6ByHTQ&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbcY0hdQxcnqSzaeRbhD4n6Wb_cyRDRnZYl7OgS4ZQNyVyWt0J8njSwmM&s=10",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK6Mj-snBO1fD100DqHA9cbZ8Om5OJBPiQ4EQT_lUJ_8uNZmb0bxZtkBut&s=10"
+      ],
+      "video": "videos/headphones.mp4",
+      "colors": [
+        {
+          "name": "Midnight",
+          "code": "#1e293b",
+          "premium": false
+        },
+        {
+          "name": "Ocean",
+          "code": "#2563eb",
+          "premium": false
+        },
+        {
+          "name": "Coral",
+          "code": "#f43f5e",
+          "premium": false
+        },
+        {
+          "name": "Gold",
+          "code": "#d4a017",
+          "premium": true
+        },
+        {
+          "name": "Rose Gold",
+          "code": "#e0a899",
+          "premium": true
+        },
+        {
+          "name": "Aurora",
+          "code": "#8b5cf6",
+          "premium": true
+        }
+      ],
+      "variants": [
+        {
+          "name": "Standard",
+          "additionalPrice": 0
+        },
+        {
+          "name": "Pro",
+          "additionalPrice": 5000
+        },
+        {
+          "name": "Max",
+          "additionalPrice": 10000
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Chrono Smartwatch",
+      "type": "watch",
+      "price": 32999,
+      "currency": "PKR",
+      "description": "AMOLED display, heart-rate tracking, GPS and a sapphire-glass face in a slim aluminium case.",
+      "images": [
+        "images/watch-1.webp",
+        "images/watch-2.webp",
+        "images/watch-3.jpg"
+      ],
+      "remoteImages": [
+        "https://www.greenlion.net/web/image/product.product/12014/image_1024/%5BGNCRNPSWBK%5D%20Green%20Lion%20Chrono%20Pro%20Smart%20Watch%20%28%E2%80%8BBlack%29?unique=8e68a83",
+        "https://png.pngtree.com/png-vector/20260529/ourmid/pngtree-smartwatch-blue-strap-digital-display-time-png-image_19435006.webp",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT5D0VKiwboM4MyTabAQSEirzFAV_EE-OsipXNBWzGVvMIrWDf876GhG0&s=10"
+      ],
+      "video": "videos/smartwatch.mp4",
+      "colors": [
+        {
+          "name": "Midnight",
+          "code": "#1e293b",
+          "premium": false
+        },
+        {
+          "name": "Ocean",
+          "code": "#2563eb",
+          "premium": false
+        },
+        {
+          "name": "Coral",
+          "code": "#f43f5e",
+          "premium": false
+        },
+        {
+          "name": "Gold",
+          "code": "#d4a017",
+          "premium": true
+        },
+        {
+          "name": "Rose Gold",
+          "code": "#e0a899",
+          "premium": true
+        },
+        {
+          "name": "Aurora",
+          "code": "#8b5cf6",
+          "premium": true
+        }
+      ],
+      "variants": [
+        {
+          "name": "Standard",
+          "additionalPrice": 0
+        },
+        {
+          "name": "Pro",
+          "additionalPrice": 5000
+        },
+        {
+          "name": "Max",
+          "additionalPrice": 10000
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Orbit Smart Speaker",
+      "type": "speaker",
+      "price": 15999,
+      "currency": "PKR",
+      "description": "360-degree room-filling sound with deep bass, voice assistant and 12-hour wireless playback.",
+      "images": [
+        "images/speaker-2.jpg",
+        "images/speaker-3.jpg",
+        "images/speaker-1.jpg"
+      ],
+      "remoteImages": [
+        "https://m.media-amazon.com/images/I/61mQEw77sTS.jpg",
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTpJLgkagwAQ2IKccWCvs99-2ZIqKkmWw8puFNS0lRs5oZv1zoQ",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToMB6EaOTwhT30uykOkjGJHhzhhY4oZD_2AvC-oaGZcfLWNqfA"
+      ],
+      "video": "videos/speaker.mp4",
+      "colors": [
+        {
+          "name": "Midnight",
+          "code": "#1e293b",
+          "premium": false
+        },
+        {
+          "name": "Ocean",
+          "code": "#2563eb",
+          "premium": false
+        },
+        {
+          "name": "Coral",
+          "code": "#f43f5e",
+          "premium": false
+        },
+        {
+          "name": "Gold",
+          "code": "#d4a017",
+          "premium": true
+        },
+        {
+          "name": "Rose Gold",
+          "code": "#e0a899",
+          "premium": true
+        },
+        {
+          "name": "Aurora",
+          "code": "#8b5cf6",
+          "premium": true
+        }
+      ],
+      "variants": [
+        {
+          "name": "Standard",
+          "additionalPrice": 0
+        },
+        {
+          "name": "Pro",
+          "additionalPrice": 5000
+        },
+        {
+          "name": "Max",
+          "additionalPrice": 10000
+        }
+      ]
+    }
+  ]
+}

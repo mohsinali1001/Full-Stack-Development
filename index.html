@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techify Atelier | Product Customizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="logo" href="#" id="logo">
+      <svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M9 12h14M16 12v12" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+      </svg>
+      <span>Techify <em>Atelier</em></span>
+    </a>
+    <div class="header-right">
+      <button id="btn-nav-add-product" class="btn-secondary nav-action-btn" type="button" title="Jump to Add Product form">➕ Add Product</button>
+      <span class="cart-pill">🛒 <b id="cart-count-header">0</b></span>
+      <span id="userBadge" class="badge free">Free User</span>
+      <a id="btn-upgrade-top" class="btn-gold" href="payment.html">Go Premium</a>
+    </div>
+  </header>
+
+  <main id="app-container">
+    <section id="gallery-view" class="view-section active">
+      <div class="hero">
+        <h1>Make it yours before it ships.</h1>
+        <p>Pick a device, choose a finish, add your name. Premium members unlock gold, rose gold and aurora finishes.
+        </p>
+        <button type="button" id="hero-add-product-btn" class="btn-secondary mt-hero">➕ Add New Product (Demo)</button>
+      </div>
+      <div id="product-grid" class="grid-container"></div>
+
+      <!-- Add Product Section (Lab 05 Demonstration) -->
+      <section id="add-product-section" class="add-product-section">
+        <div class="add-product-card">
+          <div class="add-product-header">
+            <div>
+              <span class="tag free-tag">Lab 05 Demonstration</span>
+              <h2>Add Product to Express Backend</h2>
+              <p class="add-product-subtitle">Submit a new product specification to the Express server using jQuery AJAX POST (in-memory demonstration & backend console display, no database).</p>
+            </div>
+            <button type="button" id="btn-sample-product" class="btn-secondary btn-sm">Fill Sample</button>
+          </div>
+
+          <div id="add-product-alert" class="add-product-alert hidden" role="alert"></div>
+
+          <form id="add-product-form" class="add-product-form" novalidate>
+            <div class="form-grid-2">
+              <div class="form-control">
+                <label for="new-product-name">Product Name *</label>
+                <input type="text" id="new-product-name" name="name" placeholder="e.g. Nova Wireless Earbuds" required>
+              </div>
+
+              <div class="form-control">
+                <label for="new-product-type">Product Type *</label>
+                <select id="new-product-type" name="type" required>
+                  <option value="">Select a product type</option>
+                  <option value="earbuds">Wireless Earbuds</option>
+                  <option value="headphones">Headphones</option>
+                  <option value="watch">Smartwatch</option>
+                  <option value="speaker">Smart Speaker</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-control">
+                <label for="new-product-price">Price *</label>
+                <input type="number" id="new-product-price" name="price" placeholder="e.g. 18999" min="1" required>
+              </div>
+
+              <div class="form-control">
+                <label for="new-product-currency">Currency</label>
+                <input type="text" id="new-product-currency" name="currency" value="PKR" required>
+              </div>
+            </div>
+
+            <div class="form-control">
+              <label for="new-product-desc">Description *</label>
+              <textarea id="new-product-desc" name="description" rows="2" placeholder="e.g. Wireless earbuds with active noise cancellation and studio-quality drivers." required></textarea>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-control">
+                <label for="new-product-image">Local Image Path *</label>
+                <input type="text" id="new-product-image" name="images" placeholder="e.g. images/earbuds-1.jpg" required>
+                <small class="helper-text">Local file path or asset reference</small>
+              </div>
+
+              <div class="form-control">
+                <label for="new-product-remote-image">Remote Image URL (Optional)</label>
+                <input type="text" id="new-product-remote-image" name="remoteImages" placeholder="e.g. https://example.com/earbuds.jpg">
+                <small class="helper-text">Web image URL (fallback)</small>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-control">
+                <label for="new-product-colors">Colors * (one per line)</label>
+                <textarea id="new-product-colors" name="colors" rows="3" placeholder="Black,#111111,false&#10;Gold,#d4a017,true" required></textarea>
+                <small class="helper-text">Format: <code>Name,HexCode,isPremium</code> (e.g. <code>Black,#111111,false</code>)</small>
+              </div>
+
+              <div class="form-control">
+                <label for="new-product-variants">Variants * (one per line)</label>
+                <textarea id="new-product-variants" name="variants" rows="3" placeholder="Standard,0&#10;Pro,3000" required></textarea>
+                <small class="helper-text">Format: <code>Name,AdditionalPrice</code> (e.g. <code>Standard,0</code>)</small>
+              </div>
+            </div>
+
+            <div class="add-product-actions">
+              <button type="submit" id="btn-submit-product" class="btn-primary">Add Product</button>
+              <button type="reset" id="btn-clear-product" class="btn-secondary">Clear Form</button>
+            </div>
+          </form>
+
+          <!-- Submitted Product Display Area -->
+          <div id="submitted-product-display" class="submitted-product-display hidden"></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="configurator-view" class="view-section">
+      <button id="back-to-gallery" class="btn-secondary">← Back to gallery</button>
+      <div class="configurator-layout">
+        <div class="preview-col">
+          <div class="product-preview-container" id="product-preview" draggable="true">
+            <div id="tilt-stage">
+              <div id="preview-art"></div><img id="preview-photo" class="hidden" alt="Product photo" draggable="false">
+              <div id="engraving-overlay"></div>
+            </div>
+            <div class="glare" id="glare"></div>
+            <svg id="seal" viewBox="0 0 120 120" aria-hidden="true">
+              <defs>
+                <path id="seal-path" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0" />
+              </defs>
+              <circle cx="60" cy="60" r="56" fill="currentColor" opacity=".12" />
+              <circle cx="60" cy="60" r="30" fill="none" stroke="currentColor" stroke-width="2" />
+              <g class="seal-ring"><text font-size="11" font-weight="800" letter-spacing="2.6" fill="currentColor">
+                  <textPath href="#seal-path">MADE TO ORDER • HAND FINISHED • </textPath>
+                </text></g>
+              <path d="M60 42l5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1z" fill="currentColor" />
+            </svg>
+            <div class="preview-status" id="preview-status">Move your pointer to rotate</div>
+            <span class="drag-hint">Drag me to the cart ↓</span>
+          </div>
+          <div class="thumbs" id="thumbs" aria-label="Product images"></div>
+        </div>
+
+        <form id="customization-form" class="product-details-container" novalidate>
+          <div class="title-with-action">
+            <h2 id="config-product-name">Product</h2>
+            <svg id="favorite-btn" class="svg-icon" viewBox="0 0 24 24" width="32" height="32" role="button"
+              tabindex="0" aria-label="Favorite this product">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </div>
+          <div id="config-product-price">Rs 0</div>
+          <div id="protection-toast" class="toast hidden" role="status"></div>
+          <p id="config-product-desc" class="protected-desc"></p>
+
+          <div class="customization-group">
+            <p class="group-label">Free colour: <span id="color-label">None</span></p>
+            <div class="color-options" id="color-options-container"></div>
+          </div>
+
+          <div class="customization-group">
+            <label class="group-label" for="variant-select">Variant</label>
+            <select id="variant-select"></select>
+          </div>
+
+          <div class="customization-group premium-section">
+            <p class="group-label">👑 Premium finishes: <span id="premium-color-label">None</span></p>
+            <div class="color-options" id="premium-options-container"></div>
+            <label class="check-row"><input type="checkbox" id="foil-toggle"> Gold-foil engraving <span
+                class="tag">Premium</span></label>
+            <p id="premium-lock-msg" class="lock-msg hidden">Premium feature locked. <a class="link-btn"
+                id="lock-upgrade" href="payment.html">Upgrade for Rs 500</a></p>
+          </div>
+
+          <div class="customization-group">
+            <label for="engraving-input" class="group-label">Custom engraving <span
+                class="tag free-tag">Free</span></label>
+            <input type="text" id="engraving-input" maxlength="20" placeholder="e.g.Mohsin Ali" autocomplete="off">
+            <small id="char-counter" class="counter-text"><span id="char-count">0</span>/20 characters</small>
+          </div>
+          <button type="button" id="btn-reset" class="btn-secondary">Reset customization</button>
+        </form>
+      </div>
+
+      <div id="cart-section" class="cart-container">
+        <h3>Your cart</h3>
+        <div id="drop-zone" class="drop-zone">
+          <span class="cart-icon">🛒</span>
+          <p>Drag the product preview and drop it here</p>
+          <div class="cart-stats">Items: <span id="cart-count">0</span> &nbsp;|&nbsp; Total: <span id="cart-total">Rs
+              0</span></div>
+          <div id="last-added" class="last-added-text" aria-live="polite"></div>
+          <ul id="cart-list" class="cart-list"></ul>
+          <button type="button" id="btn-add-cart" class="btn-primary mt-2">Add to cart (tap)</button>
+        </div>
+      </div>
+
+      <section class="video-container">
+        <h2 id="video-title">Product showcase</h2>
+        <div class="vp-wrap">
+          <div class="player idle" id="player" tabindex="0" aria-label="Product video player">
+            <video id="pv" preload="metadata" playsinline></video>
+            <div class="vp-caption" id="vp-caption" aria-live="polite"></div>
+            <div class="vp-loading hidden" id="vp-loading"><span class="spinner"></span></div>
+            <button type="button" class="vp-big" id="vp-big" aria-label="Play video">▶</button>
+            <div class="vp-controls">
+              <div class="vp-seek"><input type="range" id="vp-range" min="0" max="1000" value="0" aria-label="Seek">
+                <div id="vp-marks" class="vp-marks"></div>
+              </div>
+              <div class="vp-row">
+                <button type="button" id="vp-play" aria-label="Play">▶</button>
+                <button type="button" id="vp-back" title="Back 10s (J)">⟲ 10</button>
+                <button type="button" id="vp-fwd" title="Forward 10s (L)">10 ⟳</button>
+                <button type="button" id="vp-mute" title="Mute (M)">🔊</button>
+                <input type="range" id="vp-vol" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+                <span id="vp-time" class="vp-time">0:00 / 0:00</span>
+                <span class="vp-spacer"></span>
+                <select id="vp-speed" aria-label="Playback speed">
+                  <option value="0.5">0.5x</option>
+                  <option value="0.75">0.75x</option>
+                  <option value="1" selected>1x</option>
+                  <option value="1.25">1.25x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2">2x</option>
+                </select>
+                <button type="button" id="vp-loop" title="Loop" aria-pressed="false">🔁</button>
+                <button type="button" id="vp-pip" title="Picture in picture">⧉</button>
+                <button type="button" id="vp-fs" title="Fullscreen (F)">⛶</button>
+              </div>
+            </div>
+          </div>
+          <aside class="vp-side">
+            <h3>In this video</h3>
+            <ol id="vp-chapters" class="vp-chapters"></ol>
+            <p class="vp-keys"><b>Shortcuts:</b> Space play · J/L ±10s · ←/→ ±5s · ↑/↓ volume · M mute · F fullscreen
+            </p>
+          </aside>
+        </div>
+      </section>
+    </section>
+  </main>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
